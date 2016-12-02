@@ -1,0 +1,5 @@
+Tecnologia y Construccion%1
+Area Juridica-Politica%2
+Economia Administrativa%3
+Ciencias de la Salud%4
+Humanidades%5
