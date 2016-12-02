@@ -345,7 +345,7 @@ public class NuevaCarrera extends javax.swing.JFrame {
        if(m.ExisteCarrera(jTextField1.getText())== false){
            JOptionPane.showMessageDialog(null,"Está Carrera ya existe.");
        }else{
-       if(m.valid.ValidarTexto(jTextField1.getText())==false||m.valid.ValidarTexto(jTextField2.getText())==false||m.valid.ValidarEntero(jTextField9.getText())== false||m.valid.ValidarPorcentaje(jTextField3.getText(),jTextField4.getText(),jTextField5.getText(),jTextField6.getText(), jTextField7.getText(),jTextField8.getText())){
+       if(m.valid.ValidarTexto(jTextField1.getText())==false||m.valid.ValidarTexto(jTextField2.getText())==false||m.valid.ValidarEntero(jTextField9.getText())== false||m.valid.ValidarPorcentaje(jTextField3.getText(),jTextField4.getText(),jTextField5.getText(),jTextField6.getText(), jTextField7.getText(),jTextField8.getText())== false){
            JOptionPane.showMessageDialog(null,"Ingrese los campos correctamente.");
        } else{
            m.AgregarCarrera(jTextField1.getText(),String.valueOf(jComboBox1.getSelectedItem()),jTextField2.getText(),jTextField3.getText(),jTextField4.getText(),jTextField5.getText(),jTextField6.getText(),jTextField7.getText(),jTextField8.getText(),jTextField9.getText());

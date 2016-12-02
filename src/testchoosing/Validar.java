@@ -42,7 +42,6 @@ public class Validar {
     str=str.replaceAll(" ", "");
         if(str.length()==0){
            return false;
-            
         }
         else
         {
@@ -61,7 +60,8 @@ public class Validar {
       public boolean ValidarTexto(String str){
     if(ValidarVacio(str)== false || ValidarString(str)== false){
         return false;
-    }else{ return true;}
+    }else{
+        return true;}
    }
       public boolean ValidarPuntaje(String str){
           if (ValidarEntero(str)== false || Double.parseDouble(str)<0 || Double.parseDouble(str)>850) {
@@ -72,15 +72,16 @@ public class Validar {
       }
       public boolean ValidarPorcentaje(String nem, String rank, String leng, String mat, String cienc, String hist){
           double suma = 0;
-          if(ValidarPuntaje(nem)== true || ValidarPuntaje(rank)== true|| ValidarPuntaje(leng)== true|| ValidarPuntaje(mat)== true|| ValidarPuntaje(cienc)== true|| ValidarPuntaje(hist)== true){
+          if(ValidarPuntaje(nem)== false || ValidarPuntaje(rank)== false|| ValidarPuntaje(leng)== false|| ValidarPuntaje(mat)== false|| ValidarPuntaje(cienc)== false|| ValidarPuntaje(hist)== false){
+              return false;
+          }else{
               suma = Double.parseDouble(nem)+Double.parseDouble(rank)+Double.parseDouble(leng)+Double.parseDouble(mat)+Double.parseDouble(cienc)+Double.parseDouble(hist);
-              if (suma>100) {
+              if(suma >100 ){
                   return false;
               } else{
-                    return true;
+                  return true;
                 }
-          } else{
-              return false;
+          
           }
-      }  
+      }
 }

@@ -111,14 +111,15 @@ public class AgregarPreferencias extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ManejoArchivos m = new ManejoArchivos();
-        if(m.valid.ValidarTexto(jTextField1.getText())== true|| m.ExistePreferencia(jTextField1.getText()) == true){
-        m.AgregarPreferencia(jTextField1.getText(),String.valueOf(jComboBox1.getSelectedItem()));
-        JOptionPane.showMessageDialog(null,"Preferencia Guardada");
-        this.setVisible(false);
-        OpcionAdmin ad = new OpcionAdmin();
-        ad.setVisible(true);
-        } else{
+        if(m.valid.ValidarTexto(jTextField1.getText())== false|| m.ExistePreferencia(jTextField1.getText()) == false){
             JOptionPane.showMessageDialog(null,"Datos ingresados incorrectamente, o esta Preferecia ya existe");
+        } else{
+            m.AgregarPreferencia(jTextField1.getText(),String.valueOf(jComboBox1.getSelectedItem()));
+            JOptionPane.showMessageDialog(null,"Preferencia Guardada");
+            this.setVisible(false);
+            OpcionAdmin ad = new OpcionAdmin();
+            ad.setVisible(true);
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

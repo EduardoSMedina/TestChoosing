@@ -99,14 +99,14 @@ public class AgregarArea extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         ManejoArchivos m = new ManejoArchivos();
-        if(m.valid.ValidarTexto(jTextField1.getText())== true || m.ExisteArea(jTextField1.getText())== true){
-        m.AgregarArea(jTextField1.getText());
-        JOptionPane.showMessageDialog(null,"Area Guardada");
-        this.setVisible(false);
-        OpcionAdmin ad = new OpcionAdmin();
-        ad.setVisible(true);     
+        if(m.valid.ValidarTexto(jTextField1.getText())== false || m.ExisteArea(jTextField1.getText())== false){
+            JOptionPane.showMessageDialog(null,"Datos ingresados incorrectamente, o esta Area ya existe");
         }else{
-        JOptionPane.showMessageDialog(null,"Datos ingresados incorrectamente, o esta Area ya existe");
+            m.AgregarArea(jTextField1.getText());
+            JOptionPane.showMessageDialog(null,"Area Guardada");
+            this.setVisible(false);
+            OpcionAdmin ad = new OpcionAdmin();
+            ad.setVisible(true);     
         }// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
